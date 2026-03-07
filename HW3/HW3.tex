@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\newcommand{\ul}[1]{\underline{#1}}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 3 \hfill {\bf Brandon Aikman}
+
+% Homework 3
+%\begin{center}
+%	{\bf Chapter n: ex}
+%\end{center}
+\begin{enumerate}
+	% 1.
+	\item Consider an isotropic rectangular block of sides $a$, $b$, and $c$. The linear expansion coefficient of this material is $\alpha$. If the block is raised in temperature by $\theta$, find its new volume and the volume expansion coefficient $\gamma$.\\
+	\textbf {Given: } $L = L_i (1 + \alpha\theta)$, $V = V_i (1 + \gamma\theta)$, \textbf{Find: }$\gamma$.
+	\begin{eqnarray*}
+		L_a &=& L_{a_i} (1 + \alpha\theta)\\
+		L_b &=& L_{b_i} (1 + \alpha\theta)\\
+		L_c &=& L_{c_i} (1 + \alpha\theta)\\
+		V &=& L_a \cdot L_b \cdot L_c\\
+		&=& L_{a_i} \cdot L_{b_i} \cdot L_{c_i} (1 + \alpha\theta)^3\\
+		V_i &=& L_{a_i} \cdot L_{b_i} \cdot L_{c_i}\\ 
+		V &=& V_i (1 + \gamma\theta)\\
+		&=& L_{a_i} \cdot L_{b_i} \cdot L_{c_i} (1 + \gamma\theta)\\
+		L_{a_i} \cdot L_{b_i} \cdot L_{c_i} (1 + \gamma\theta) &=& L_{a_i} \cdot L_{b_i} \cdot L_{c_i} (1 + \alpha\theta)^3\\
+		1 + \gamma\theta &=& (1 + \alpha\theta)^3\\
+		\gamma\theta &=& (1 + \alpha\theta)^3 - 1\\
+		\gamma &=& \frac{(1 + \alpha\theta)^3 - 1}{\theta}
+	\end{eqnarray*}
+	$$\fbox{$\gamma = \frac{(1 + \alpha\theta)^3 - 1}{\theta} \approx 3\alpha$}$$	
+	
+	% 2.
+	\item A student uses two different vessels $A$ and $B$ to find the apparent expansion of a liquid. The coefficient of the linear expansion of the vessel $A$ is $\alpha$. The apparent expansion coefficients for the liquid when the liquid is heated in $A$ and $B$ are $\gamma_1$ and $\gamma_2$ respectively.\\
+	\textbf {Given: } $\gamma_1 = \gamma_{\mbox{liq.}} - \gamma_{\mbox{ves. 1}}$,  $\gamma_2 = \gamma_{\mbox{liq.}} - \gamma_{\mbox{ves. 2}}$, \textbf{Find: }$\alpha_B$.
+	\begin{eqnarray*}
+		 \gamma_1 &=& \gamma_{\mbox{liq.}} - \gamma_{\mbox{ves. 1}}\\
+		 &=& \gamma_{\mbox{liq.}} - 3 \alpha_A\\
+		 \gamma_{\mbox{liq.}} &=& \gamma_1 + 3 \alpha_A\\
+		 \gamma_2 &=& \gamma_{\mbox{liq.}} - \gamma_{\mbox{ves. 2}}\\
+		 &=& \gamma_{\mbox{liq.}} - 3 \alpha_B\\
+		 \gamma_2 + 3 \alpha_B &=& \gamma_1 + 3 \alpha_A\\
+		 3 \alpha_B &=& \gamma_1 + 3\alpha_A - \gamma_2\\
+		 \alpha_B &=& \frac{\gamma_1 - \gamma_2 + 3\alpha_A}{3}		 
+	\end{eqnarray*}
+	$$\fbox{D.) $\alpha_B = \frac{\gamma_1 - \gamma_2}{3} + \alpha_A$}$$
+	
+	% 3.
+	\item Most methods of measuring the expansion of a liquid, whether true
+(absolute) or apparent, depend on the change in density of the liquid when it
+expands. At temperature $T_1$, volume of a liquid is given by $V_1$. When it is heated to temperature $T_2$, its new volume is given by $V_2$. The volume expansion coefficient of the liquid is $\gamma$ and the densities of the liquid at two temperatures are $\rho_1$ and $\rho_2$ respectively.\\
+	\textbf {Given: } $\gamma$, $V_1$, $V_2$, $\Delta T = T_2 - T_1$, $\rho_1$, $\rho_2$,  \textbf{Find the relation between $\rho_1$ and $\rho_2$}.
+	\begin{eqnarray*}
+		 m &=& \rho_1 V_1\\
+		 V_1 &=& \frac{m}{\rho_1}\\
+		 m &=& \rho_2 V_2\\
+		 V_2 &=& \frac{m}{\rho_2}\\
+		 V_2 &=& V_1(1 + \gamma\Delta T)\\
+		 \frac{m}{\rho_2} &=& \frac{m}{\rho_1}(1 + \gamma\Delta T)\\
+		 \rho_1 = \rho_2(1 + \gamma\Delta T) &\equiv& \rho_2 = \frac{\rho_1}{(1 + \gamma\Delta T)}
+	\end{eqnarray*}
+	$$\fbox{B.) $\equiv$ C.)}$$
+	
+	%4. 
+	\item Aniline is a liquid which does not mix with water, and when a small quantity of it is poured into a beaker of water at 20 $^\circ$C it sinks to the bottom, the densities of the two liquids at 20 $^\circ$C being 1021 and 998 kg $\cdot$ m$^{-3}$ respectively. To what temperature must the beaker and its contents be uniformly heated so that the aniline will form a globule which just floats in the water?)\\
+	\textbf {Given: } $T_i = 20 ^\circ$ C = 293.15 K, $\rho_a = 1021$ kg $\cdot$ m$^{-3}$, $\rho_w = 998$ kg $\cdot$ m$^{-3}$, $\gamma_a = 0.00085 \cdot$ K$^{-1}$, $\gamma_w = 0.00045 \cdot$ K$^{-1}$, \textbf{Find: }$T_f$.
+	\begin{eqnarray*}
+		 \rho(T) &\propto & \frac{1}{V(T)} \Rightarrow \rho_a (T) = \rho_w (T)\\
+		 \rho (T) &=& \frac{m}{V_0 (1 + \gamma\Delta T)}\\
+		 &=& \frac{\rho_0 V_0}{V_0 (1 + \gamma\Delta T)}\\
+		 &=& \frac{\rho_0}{1 + \gamma\Delta T}\\
+		 \rho_a (T) &=& \frac{\rho_a}{1 + \gamma_a\Delta T}\\
+		 \rho_w (T) &=& \frac{\rho_w}{1 + \gamma_w\Delta T}\\
+		 \frac{\rho_a}{1 + \gamma_a\Delta T} &=& \frac{\rho_w}{1 + \gamma_w\Delta T}\\
+		 \rho_a(1 + \gamma_w\Delta T) &=& \rho_w(1 + \gamma_a\Delta T)\\
+		 \rho_a + \rho_a \gamma_w \Delta T &=& \rho_w + \rho_w \gamma_a \Delta T\\
+		 \Delta T(\rho_a\gamma_w - \rho_w\gamma_a) &=& \rho_w - \rho_a\\
+		 \Delta T = T_f - T_i &=& \frac{\rho_w - \rho_a}{\rho_a\gamma_w - \rho_w\gamma_a}\\
+		 T_f &=& \frac{\rho_w - \rho_a}{\rho_a\gamma_w - \rho_w\gamma_a} + 293.15 \mbox{ K}\\
+		 &=& \frac{998 - 1021}{1021\cdot 0.00045 - 998 \cdot 0.00085} + 293.15 \mbox{ K}\\
+		 &=& 352.299 \mbox{ K}
+	\end{eqnarray*}
+	$$\fbox{$\approx 350$ K}$$
+	
+	% 5.
+	\item We received a record level of snowfall over the previous weekend and are currently experiencing very low winter temperatures.\\
+	Please provide a reliable estimate of the amount of liquid water that would result from the melting of all the snow in Ohio, expressed in cubic meters and kilograms.\\
+	In your estimate, clearly explain all the calculations and assumptions you made. Additionally, please recalculate the total water volume and mass for the entire United States.\\\\
+	I loosely filled a 100 mL beaker with snow, and left it until it melted. I did not pack it as tightly as it could go, as I tried to emulate what the density of natural snow packing is like. After it melted, there was 28 mL (0.000028 m$^3$) of water left. According to what we saw at Cedarville and what multiple news and weather sources reported, the state of Ohio averaged 12" of snow (0.3048 m). Given that the area of Ohio is $1.16\times 10^{11}$ m$^2$, the volume of snow received is $0.3048 \mbox{ m} \cdot 1.16 \times 10^{11} \mbox{ m}^2\approx 3.54 \times 10^{10}$ m$^3$. This is assuming that the whole state received an average of 0.3 m, and that any body of water was frozen over and snow accumulated on top. Because I noticed a 72\% reduction in volume from snow to water from my experiment, I can estimate that $\approx 9.91 \times 10^9$ m$^3$ of water will result from the melted snow. Additionally, this is equivalent to $\approx 9.91 \times 10^{12}$ kg of water.\\\\
+	Assuming that the whole United States also received 0.3 m of snow, which we know it really did not, we can estimate how much water the United States as a whole would have received. Given that the total area of the United States, including water, is 9.83 $\times 10^{12}$ m$^2$, the total volume of snow received would be $0.3048 \mbox{ m} \cdot 9.83 \times 10^{12} \mbox{ m}^2\approx 3.00 \times 10^{12}$ m$^3$. As before, we can apply the 72\% reduction in volume of snow to water to estimate that the amount of water from the melted snow is $\approx 8.39 \times 10^{11}$ m$^3$, which has a mass of $8.39 \times 10^{14}$ kg.
+
+\end{enumerate}
+
+\end{document}

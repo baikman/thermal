@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\newcommand{\ul}[1]{\underline{#1}}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 2 \hfill {\bf Brandon Aikman}
+
+% Homework 1 
+%\begin{center}
+%	{\bf Chapter n: ex}
+%\end{center}
+\begin{enumerate}
+	% 1.
+	\item For an ideal gas, $$P = \frac{1}{3}\rho \overline{v^2},$$ where $\rho$ is the density of the gas.
+	\begin{enumerate}
+		\item Find the root-mean-square speed of H$_2$ molecules at STP. \\
+		\textbf {Given: } $\rho _{STP}  = 0.09$ kg/m$^3$, $P = 760$ mmHg $= 101325$ Pa, $T_{STP} = 273.15$ K, \textbf{Find: }$v_{rms}$.
+		\begin{eqnarray*}
+			P &=& \frac{1}{3}\rho \overline{v^2}\\
+			\overline{v^2} &=& 3 \frac{P}{\rho}\\
+			\sqrt{\overline{v^2}} &=& \sqrt{3\frac{P}{\rho}}\\
+			v_{rms} &=& \sqrt{3 \frac{P}{\rho}}\\
+			&=& \sqrt{3\frac{101325 \mbox{ Pa}}{0.09 \mbox{ kg/m$^3$}}}\\
+			&=& 1837.8\mbox{ m/s}.
+		\end{eqnarray*}
+		$$\fbox{$\approx 1840 \mbox{ m/s}$}$$		
+		\item Is the answer in part (a) reasonable? \\
+			\textbf{Yes, the answer in part (a) is reasonable. The root-mean-square speed of H$_2$ molecules at STP is known to be around 1838 m/s, and the answer that I reached is close to this speed.}
+		
+	\end{enumerate}	
+	
+	% 2.
+    \item Derive the barometric equation.
+    \begin{eqnarray*}
+		F_{above} + mg &=& F_{below}\\
+		F_{above} - F_{below} &=& -mg\\
+		(P_{above} - P_{below})A &=& -mg\\
+		dPA &=& -mg\\
+		dP &=& -\frac{mg}{A}\\
+		&=& -\frac{\rho V g}{A}\\
+		&=& -\rho g dz\\
+		\frac{dP}{dz} &=& -\rho g.\\
+		PV &=& Nk_BT\\
+		P &=& \frac{N}{V}k_BT\\
+		\rho &=& m\frac{N}{V}\\
+		P &=& \frac{\rho k_BT}{m}\\
+		\rho &=& \frac{m}{k_BT}P\\
+		\frac{dP}{dz} &=& -\frac{mg}{k_BT}P.
+	\end{eqnarray*}
+\end{enumerate}
+
+\end{document}

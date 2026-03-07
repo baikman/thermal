@@ -1,0 +1,103 @@
+\documentclass[12pt]{article} 
+\newcommand{\ul}[1]{\underline{#1}}
+
+\usepackage{amsmath}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 4 \hfill {\bf Brandon Aikman}
+
+\begin{enumerate}
+	% 1.
+	\item The 1-D thermal diffusion equation is given by
+	$$ \frac{\partial T(x,t)}{\partial t} = D \frac{\partial^2 T(x,t)}{\partial x^2}. $$
+	The thermal diffusion equation is a bit like a wave equation. Don’t you think so?
+
+	Use the wave-like solutions of the form
+	$$T(x,t) \propto \exp[i(kx - \omega t)]$$
+	to solve this diffusion equation.
+
+	\begin{enumerate}
+		\item Show that
+			$$k = \pm (1 + i)\sqrt{\frac{\omega}{2D}}.$$
+			\begin{eqnarray*}
+				\frac{\partial T}{\partial t} &=& -i\omega T \\
+				\frac{\partial T}{\partial x} &=& ikT \\
+				\frac{\partial^2 T}{\partial x^2} &=& -k^2 T \\
+				-i\omega T &=& -Dk^2 T \\
+				k^2 &=& \frac{i\omega}{D} \\
+				k &=& \pm \sqrt{\frac{i\omega}{D}} \\
+				\sqrt{i} &=& \frac{1+i}{\sqrt{2}} \\
+				k &=& \pm (1+i)\sqrt{\frac{\omega}{2D}}
+			\end{eqnarray*}
+		\item Find the general solution for the region $x \ge 0$.
+		\begin{eqnarray*}
+			T(x,t) &\propto& e^{i\left[((1+i)\sqrt{\frac{\omega}{2D}})x - \omega t\right]}
+		\end{eqnarray*}
+		$$\fbox{$T(x,t) = e^{-i\omega t} \left( A e^{(1+i)\sqrt{\frac{\omega}{2D}}\,x} + B e^{-(1+i)\sqrt{\frac{\omega}{2D}}\,x} \right)$}$$
+	\end{enumerate}	
+	\pagebreak
+	% 2.
+	\item The radius and the thermal conductivity of a cylindrical wire is $a$ and $\kappa$ respectively. The wire’s resistivity is $\rho$ and it carries a uniform direct current $I$. The temperature of its surface is fixed at $T_0$ using a large water reservoir.
+	\begin{enumerate}
+		\item Show that the rate of heat generated per unit volume by the current carrying wire is $$H = \rho j^2,$$
+		where $j$ is the current density.
+		Hint: Use the microscopic version of Ohm’s law.
+		\begin{eqnarray*}
+			H &=& j \cdot E\\
+			E &=& \rho j\\
+			H &=& j \cdot (\rho j)\\
+			&=& \rho j^2.
+		\end{eqnarray*}
+	$$\fbox{$H = \rho j ^2$}$$			
+		\pagebreak
+		\item Show that the temperature $T(r)$ at radius $r$ is given by $$T(r) = \frac{\rho I^2}{4\pi^2 a^4 \kappa}(a^2 - r^2) + T_0.$$
+		\begin{eqnarray*}
+			\frac{\partial T}{\partial t} &=& D \nabla^2 T + \frac{H}{C}, \mbox{ where } D = \frac{\kappa}{C} \\
+			\frac{\partial T}{\partial t} &=& 0 \\
+			\kappa \nabla^2 T &=& -H \\
+			\nabla^2 T &=& -\frac{H}{\kappa} \\
+			\nabla^2 T &=& \frac{1}{r}\frac{d}{dr}\left( r \frac{dT}{dr} \right) \\
+			\frac{1}{r}\frac{d}{dr}\left( r \frac{dT}{dr} \right) &=& -\frac{H}{\kappa} \\
+			\frac{d}{dr}\left( r \frac{dT}{dr} \right) &=& -\frac{H}{\kappa} r \\
+			\int \frac{d}{dr}\left( r \frac{dT}{dr} \right) dr &=& \int -\frac{H}{\kappa} r \, dr \\
+			r \frac{dT}{dr} &=& -\frac{H}{2\kappa} r^2 + C_1 \\
+			\frac{dT}{dr} &=& -\frac{H}{2\kappa} r + \frac{C_1}{r} \\
+			\int \frac{dT}{dr} dr &=& \int \left( -\frac{H}{2\kappa} r + \frac{C_1}{r} \right) dr \\
+			T(r) &=& -\frac{H}{4\kappa} r^2 + C_1 \ln r + C_2 \\
+			C_1 &=& 0 \mbox{ because } \ln r \rightarrow -\infty \mbox{ as } r \rightarrow 0 \\
+			T(r) &=& -\frac{H}{4\kappa} r^2 + C_2 \\
+			T(a) &=& T_0 \\
+			T_0 &=& -\frac{H}{4\kappa} a^2 + C_2 \\
+			C_2 &=& T_0 + \frac{H}{4\kappa} a^2 \\
+			T(r) &=& \frac{H}{4\kappa}(a^2 - r^2) + T_0 \\
+			H &=& \rho j^2, j = \frac{I}{A} = \frac{I}{\pi a^2} \\
+			H &=& \rho \frac{I^2}{\pi^2 a^4} \\
+			T(r) &=& \frac{\rho I^2}{4\pi^2 a^4 \kappa} (a^2 - r^2) + T_0
+		\end{eqnarray*}
+		
+		\item If the wire is now placed in air at temperature $T_{\mathrm{air}}$ and the wire loses heat from its surface according to Newton’s law of cooling, so that the heat flux from the surface of the wire is given by $$\alpha [T(a) - T_{\mbox{air}}],$$
+		where $\alpha$ is a constant, find the temperature $T(r)$.
+		\begin{eqnarray*}
+			J &=& -\kappa \frac{dT}{dr} \\
+			-\kappa \left.\frac{dT}{dr}\right|_{r=a} &=& \alpha [T(a) - T_{\text{air}}] \\
+	\frac{dT}{dr} &=& -\frac{H}{2\kappa} r \\
+			-\kappa T'(a) &=& \alpha [T(a) - T_{\text{air}}] \\
+			-\kappa \left(-\frac{H}{2\kappa} a \right) &=& \alpha \left[-\frac{H}{4\kappa} a^2 + C_2 - T_{\text{air}} \right] \\
+			\frac{H}{2} a &=& \alpha \left[-\frac{H}{4\kappa} a^2 + C_2 - T_{\text{air}} \right] \\
+			\frac{H a}{2\alpha} &=& -\frac{H}{4\kappa} a^2 + C_2 - T_{\text{air}} \\
+			C_2 &=& T_{\text{air}} + \frac{H}{4\kappa} a^2 + \frac{H a}{2\alpha} \\
+			T(r) &=& -\frac{H}{4\kappa} r^2 + T_{\text{air}} + \frac{H}{4\kappa} a^2 + \frac{H a}{2\alpha} \\
+			T(r) &=& \frac{H}{4\kappa} (a^2 - r^2) + T_{\text{air}} + \frac{H a}{2\alpha}
+	\end{eqnarray*}
+		$$\fbox{$T(r) = \frac{\rho I^2}{4\pi^2 a^4 \kappa} (a^2 - r^2) + \frac{\rho I^2}{2\pi^2 a^3 \alpha} + T_{\text{air}}$}$$
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
