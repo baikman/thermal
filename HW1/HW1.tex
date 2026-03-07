@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\newcommand{\ul}[1]{\underline{#1}}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 1 - Preliminaries \hfill {\bf Brandon Aikman}
+
+% Homework 1 
+%\begin{center}
+%	{\bf Chapter n: ex}
+%\end{center}
+\begin{enumerate}
+	% 1.
+	\item What is the mass of 4 moles of carbon dioxide? \\
+	\textbf {Given: } $m_c  = 12$ g, $m_o = 16$ g, \textbf{Find: } $m$.
+	\begin{eqnarray*}
+		m &=& 4 \cdot (m_c + (2 \cdot m_o))\\
+		&=& 4 \cdot (12 \mbox{ g} + (2 \cdot 16 \mbox{ g}))\\
+		&=& 4 \cdot 44 \mbox{ g}.
+	\end{eqnarray*}
+	$$\fbox{$= 176$ g}$$
+	
+	% 2.
+    \item A typical bacterium has a mass of 1 pg. Calculate the mass of a mole of bacteria. \\
+    \textbf {Given: } $m_b = 1$ pg, $m_e  = 5000$ kg, \textbf{Find: } $m$.
+    \begin{eqnarray*}
+		m &=& N_A \cdot m_b\\
+		&=& 6.022 \cdot 10^{23} \cdot 1 \mbox{ pg}\\
+		&=& 6.022 \cdot 10^{8} \mbox{ kg}.
+	\end{eqnarray*}
+	$$\fbox{$\approx 120000$ elephant-masses}$$
+    
+    % 3.
+    \item Convert the following temperatures into Kelvin:
+    \begin{enumerate}
+        \item Boiling point of hydrogen: -252.87 degrees Celsius.
+        \begin{eqnarray*}
+			-252.87\mbox{ $^{ \circ}$C} &=& 273.15 + (-252.87) \mbox{ K}.
+		\end{eqnarray*}
+		$$\fbox{$= 20.28$ K}$$
+        \item Triple point of water: 0.01 degrees Celsius.
+        \begin{eqnarray*}
+			0.01\mbox{ $^{ \circ}$C} &=& 273.15 + (0.01) \mbox{ K}.
+		\end{eqnarray*}
+		$$\fbox{$= 273.16$ K}$$
+    \end{enumerate}
+    
+    % 4.
+    \item Convert the following temperatures into Fahrenheit:
+    \begin{enumerate}
+        \item -13 degrees Celsius.
+        \begin{eqnarray*}
+			-13\mbox{ $^{ \circ}$C} &=& -13 \cdot 1.8 + 32 \mbox{ $^{ \circ}$F}.
+		\end{eqnarray*}
+		$$\fbox{$= 8.6 \mbox{ $^{ \circ}$F}$}$$
+        \item 25 degrees Kelvin.
+        \begin{eqnarray*}
+        	25 \mbox{ K} &=& 25 - 273.15 \mbox{ $^{ \circ}$C}\\
+        	&=& -248.15 \mbox{ $^{ \circ}$C}\\
+        	-248.15 \mbox{ $^{ \circ}$C} &=& -248.15 \cdot 1.8 + 32 \mbox{ $^{ \circ}$F}\\
+			&=& -414.67 \mbox{ $^{ \circ}$F}
+		\end{eqnarray*}
+		$$\fbox{$\approx -410 \mbox{ $^{ \circ}$F}$}$$
+    \end{enumerate}
+    
+    % 5.
+    \item A system contains $n$ atoms, each of which can only have zero or one quanta of energy. How many ways can you arrange $r$ quanta of energy when:
+    \begin{enumerate}
+        \item $n = 2$, $r = 1$
+        	$${2 \choose 1} = \fbox{2}.$$
+        \item $n = 20$, $r = 10$
+        	$${20 \choose 10} = \fbox{184756}.$$
+        \item $n = 2 \cdot 10^{23}$, $r = 10^{23}$
+        	$$\fbox{${2 \cdot 10^{23} \choose 10^{23}}$}.$$
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
