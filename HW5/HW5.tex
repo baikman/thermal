@@ -1,0 +1,79 @@
+\documentclass[12pt]{article} 
+\newcommand{\ul}[1]{\underline{#1}}
+
+\usepackage{amsmath}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\allowdisplaybreaks
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 5 \hfill {\bf Brandon Aikman}
+
+\begin{enumerate}
+	% 1.
+	\item Derive a formula for the efficiency of the Diesel cycle, in terms of the compression ratio $V_1/V_2$ and the cutoff ratio $V_3/V_2$. Show that for a given compression ratio, the Diesel cycle is less efficient than the Otto cycle. Evaluate the theoretical efficiency of a Diesel engine with a compression ratio of 18 and a cutoff ratio of 2.
+
+	We know that $Q = 0$ for both adiabatic processes, for isobaric processes $Q = n C_P \Delta T$, and that for isometric processes $Q = n C_V \Delta T$. We also know that from point 2 to point 3 on the PV diagram for a diesel process, an isobaric process occurs, and that from point 4 to point 1, an isometric process occurs.
+
+	\begin{eqnarray*}
+		\mbox{Let } c &=& \frac{V_1}{V_2} \mbox{ and } u = \frac{V_3}{V_2} \\
+		e_D &=& 1 - \frac{Q_{out}}{Q_{in}} \\
+		&=& 1 - \frac{n C_V (T_4 - T_1)}{n C_P (T_3 - T_2)} \\
+		\frac{n C_V}{n C_P} &=& \frac{1}{\gamma}\\
+		1 \rightarrow 2: \quad T_1 V_1^{\gamma-1} &=& T_2 V_2^{\gamma-1} \\
+		T_2 &=& \left( \frac{V_1}{V_2} \right)^{\gamma-1} T_1 \\
+		&=& c^{\gamma-1}T_1\\
+		3 \rightarrow 4: \quad T_3 V_3^{\gamma-1} &=& T_4 V_1^{\gamma-1} \\
+		T_4 &=& \left( \frac{V_3}{V_1} \right)^{\gamma-1} T_3 \\
+		\frac{V_3}{T_3} &=& \frac{V_2}{T_2} \\
+		T_3 &=& T_2 \frac{V_3}{V_2} \\
+		&=& u T_2\\
+		&=& u c^{\gamma-1} T_1 \\
+		T_4 &=& \left( \frac{V_3}{V_1} \right)^{\gamma-1} u c^{\gamma-1} T_1\\
+		&=& \left( \frac{V_3}{V_1} \right)^{\gamma-1} \left( \frac{V_1}{V_2} \right)^{\gamma-1} u T_1\\
+		&=& \left( \frac{V_3}{V_2} \right)^{\gamma-1} u T_1\\
+		&=& u^\gamma T_1 \\
+		e_D &=& 1 - \frac{1}{\gamma} \frac{u^\gamma T_1 - T_1}{u c^{\gamma-1} T_1 - c^{\gamma-1}T_1}.
+	\end{eqnarray*}
+	$$\fbox{$e_D = 1 - \frac{1}{\gamma} \frac{u^\gamma - 1}{c^{\gamma-1}(u - 1)}$}$$
+
+	We see that the efficiency for an Otto cycle is $$e_O = 1 - \frac{1}{c^{\gamma-1}}.$$
+	We seek to show that $e_D < e_O$ for an arbitrary $c$. So, we will demonstrate that $e_O - e_D > 0$.
+	\begin{eqnarray*}
+		e_O - e_D &>& 0 \\
+		1 - \frac{1}{c^{\gamma-1}} - \left( 1 - \frac{1}{\gamma} \frac{u^\gamma - 1}{c^{\gamma-1}(u - 1)} \right) &>& 0 \\
+		\frac{1}{\gamma} \frac{u^\gamma - 1}{c^{\gamma-1}(u - 1)} - \frac{1}{c^{\gamma-1}} &>& 0 \\
+		\frac{1}{c^{\gamma-1}} \left( \frac{1}{\gamma} \frac{u^\gamma - 1}{u - 1} - 1 \right) &>& 0 \\
+		\mbox{We know that for all $V_3 > V_2$, } u &>& 1. \\
+		\mbox{Also, we know that } \gamma &>& 1. \\
+		\mbox{ Now, we seek to show that the quantity $\frac{1}{\gamma} \frac{u^\gamma - 1}{u - 1} - 1$} &>& 0. \\
+		u^{\gamma} - 1 &>& \gamma (u-1) \\
+		u^{\gamma} - 1 - \gamma (u-1) &>& 0. \\
+		\mbox{If we define $f(u) = u^{\gamma} - 1 - \gamma (u-1)$, we just need to show that } f(u) &>& 0 \mbox{ for $u > 1$.} \\
+		f(1) &=& 1 - 1 - 0 = 0 \\
+		f'(u) &=& \gamma u^{\gamma - 1} - \gamma \\
+		&=& \gamma \left( u^{\gamma - 1} - 1 \right) \\
+		\mbox{We see that $f(u)$ starts at $0$ and that its derivative is greater than zero for } u &>& 1, \mbox{ so} \\
+		\frac{1}{\gamma} \frac{u^\gamma - 1}{u - 1} - 1 &>& 0.
+	\end{eqnarray*}
+	Thus, we conclude that the quantity $\frac{1}{c^{\gamma-1}} \left( \frac{1}{\gamma} \frac{u^\gamma - 1}{u - 1} - 1 \right) > 0$, equivalent to $e_O - e_D > 0$. We see conclusively that the Diesel cycle is less efficient than the Otto cycle.
+
+	For $c = 18$ and $u = 2$, we see that:
+	\begin{eqnarray*}
+		e_D &=& 1 - \frac{1}{\gamma} \frac{2^\gamma - 1}{18^{\gamma-1}(2 - 1)} \\
+		&=& 1 - \frac{1}{\gamma} \frac{2^\gamma - 1}{18^{\gamma-1}} \\
+		\mbox{Assuming } \gamma &=& 1.4 \mbox{ for air,} \\
+		e_D &=& 1 - \frac{1}{1.4} \frac{2^{1.4} - 1}{18^{1.4-1}} \\
+		&=& 1 - 0.368\\
+		&=& 0.632
+	\end{eqnarray*}
+	So, we see that the Diesel engine's theoretical efficiency for $c = 18$ and $u = 2$ is 63$\%$.
+\end{enumerate}
+
+\end{document}
