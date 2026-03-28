@@ -1,0 +1,108 @@
+\documentclass[12pt]{article} 
+\newcommand{\ul}[1]{\underline{#1}}
+
+\usepackage{amsmath}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\allowdisplaybreaks
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 6 \hfill {\bf Brandon Aikman}
+
+\begin{enumerate}
+	% 1.
+	\item Rubber's Entropy
+
+	Rubber consists of long-chain molecules. With no force applied, the rubber molecules are quite coiled up, and the average end-to-end distance is short. With a force applied (along horizontal axis), the molecules become more aligned with the direction of the force, and end-to-end distance is large reducing entropy.
+
+	A rubber molecule can be modeled in one dimension as a chain consisting of a series of $N = N_+ + N_-$ links, where $N_+$ links point in the $+x$ direction and $N_-$ links point in the $-x$ direction, respectively.
+    
+    If the length of one link in the chain is $a$,
+
+	\begin{enumerate}
+		\item Show that the length $L$ of the chain is $$L = a(N_+ - N_-)$$
+		\begin{eqnarray*}
+            L &=& aN \\
+            &=& a(N_+ - N_-).
+        \end{eqnarray*}
+       
+		\item The number of ways $\Omega (L)$ of arranging the links to achieve a length $L$ can be written as  $$\Omega(L) = \frac{N!}{N_+!N_-!}.$$
+		Show that the entropy, $S$ can be written approximately as $$S = Nk_B \left[ \ln 2 - \frac{L^2}{2N^2 a^2} \right]$$
+        when $L << Na$.
+        \begin{eqnarray*}
+            \frac{S}{k_B} &=& \ln \Omega \\
+            &=& \ln \left( \frac{N!}{N_+! N_-!} \right) \\
+            &=& \ln N! - \ln N_+! - \ln N_-! \\
+            &=& N \ln N - N - (N_+ \ln N_+ - N_+) - (N_- \ln N_- - N_-) \\
+            &=& N \ln N - N - (\frac{1}{2}(N+\frac{L}{a}) \ln \frac{1}{2}(N+\frac{L}{a}) - (\frac{1}{2}(N+\frac{L}{a})) - \\
+            && (\frac{1}{2}(N-\frac{L}{a}) \ln \frac{1}{2}(N-\frac{L}{a}) - \frac{1}{2}(N-\frac{L}{a})) \\
+            &=& \ln N! - \ln\!\left[\left(\tfrac{1}{2}N + \tfrac{L}{a}\right)!\right] - \ln\!\left[\left(\tfrac{1}{2}N - \tfrac{L}{a}\right)!\right] \\
+            &=& N \ln N - \frac{N + L/a}{2}\ln\!\left(\frac{N + L/a}{2}\right) - \frac{N - L/a}{2}\ln\!\left(\frac{N - L/a}{2}\right) \\
+            &=& N \ln N - \frac{N + L/a}{2}\left(\ln \frac{N}{2} + \ln\!\left(1 + \frac{L}{Na}\right)\right)
+            - \frac{N - L/a}{2}\left(\ln \frac{N}{2} + \ln\!\left(1 - \frac{L}{Na}\right)\right) \\
+            &=& N \ln N - N \ln\!\left(\frac{N}{2}\right)
+            - \frac{N}{2}\left[\left(1 + \frac{L}{Na}\right)\ln\!\left(1 + \frac{L}{Na}\right)
+            + \left(1 - \frac{L}{Na}\right)\ln\!\left(1 - \frac{L}{Na}\right)\right] \\
+            &\approx& N \ln 2 - \frac{N}{2}\left[\left(\frac{L}{Na} + \frac{(L/Na)^2}{2}\right)
+            + \left(-\frac{L}{Na} + \frac{(L/Na)^2}{2}\right)\right], \\
+            && \mbox{ using rough Taylor series approximation} \\
+            &=& N \ln 2 - \frac{N}{2}\left(\frac{L^2}{N^2 a^2}\right) \\
+            &=& N \ln 2 - \frac{L^2}{2N a^2} \\
+            S &=& N k_B \left[\ln 2 - \frac{L^2}{2N^2 a^2}\right].
+        \end{eqnarray*}
+	\end{enumerate}
+
+	% 2.
+	\item Black Hole Thermodynamics (A simple model)
+
+	We are given expressions for the entropy, temperature, and event horizon radius  of a black hole:
+	\begin{eqnarray*}
+		S &=& \frac{k_B c^3}{4\hbar G}A, \\
+		T &=& \frac{\hbar c^3}{8\pi k_B G M}, \\
+		R &=& \frac{2GM}{c^2}.
+	\end{eqnarray*}
+
+    \begin{enumerate}
+        \item Show that $S$ can be written in the form $$S = \frac{4 \pi k_B G}{\hbar c}M^2.$$
+            \begin{eqnarray*}
+                S &=& \frac{k_B c^3}{4\hbar G}A, \mbox{ where } A = 4 \pi R^2 = \frac{16 \pi G^2 M^2}{c^4}\\
+                &=& \frac{k_B c^3}{4\hbar G} \cdot \frac{16\pi G^2 M^2}{c^4} \\
+                &=& \frac{4\pi k_B G}{\hbar c} M^2.
+            \end{eqnarray*}
+        
+        \item If mass losses, show that $$dS = \frac{8\pi k_B G}{\hbar c}mdm.$$
+            \begin{eqnarray*}
+                \frac{dS}{dm} &=& \frac{8\pi k_B G}{\hbar c} m \\
+                dS &=& \frac{8\pi k_B G}{\hbar c} mdm.
+            \end{eqnarray*}
+
+        \item If the initial mass of the black hole is $M$ and final mass of it is $M'$, show that the heat energy lost is given by $$Q = \Delta Mc^2.$$
+            \begin{eqnarray*}
+                dS &=& \frac{Q}{T} \\
+                Q &=& TdS \\
+                &=& \frac{8 \pi k_B G}{\hbar c}M \Delta M \cdot \frac{\hbar c^3}{8 \pi k_B G M} \\
+                &=& (\Delta M)c^2
+            \end{eqnarray*}
+
+        \item Show that the heat capacity of the black hole $C$ is given by $$C = -\frac{8 \pi k_B G}{\hbar c}M.$$
+            \begin{eqnarray*}
+                C &=& T \frac{dS}{dT} \\  
+                &=& \frac{\hbar c^3}{8\pi k_B G M} \cdot \frac{8\pi k_B G MdM}{\hbar c} \cdot -\frac{8 \pi k_B G M^2}{\hbar c^3 dM} \\
+                &=& -\frac{8\pi k_B G}{\hbar c} M^2.
+            \end{eqnarray*}
+            My derivation yields the heat capacity of the black hole to be $C = -\frac{8\pi k_B G}{\hbar c} M^2$, not $C = -\frac{8 \pi k_B G}{\hbar c}$. \\
+
+            What is the significance of negative heat capacity?
+
+            Negative heat capacity implies that when energy is added to a black hole, its temperature is lowered, while when energy is removed from a black hole, its temperatuer increases.
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
