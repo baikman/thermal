@@ -1,0 +1,92 @@
+\documentclass[12pt]{article} 
+\newcommand{\ul}[1]{\underline{#1}}
+
+\usepackage{amsmath}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\allowdisplaybreaks
+
+\begin{document}
+\noindent{\large\bf PHYS-3350 \hfill Thermal Physics \hfill Spring 2026} \\
+Homework 7 \hfill {\bf Brandon Aikman}
+
+\begin{enumerate}
+	% 1.
+	\item Using the Maxwell-Boltzmann speed distribution, find the following quantities.
+
+	Given the Maxwell-Boltzmann speed distribution:
+	$$f(v) = 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} v^2 e^{-mv^2/2k_BT}$$
+
+	\begin{enumerate}
+		\item $\langle v \rangle = \int_0^{\infty} v f(v)  dv$
+        \begin{eqnarray*}
+            \langle v \rangle &=& \int_0^\infty v f(v) dv \\
+            &=& \int_0^\infty 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} v^3 e^{-mv^2/2k_B T} dv \\
+            &=& 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} \int_0^\infty v^3 e^{-mv^2/2k_B T} dv \\
+        \end{eqnarray*}
+        Using the known Gaussian integral
+        \begin{eqnarray*}
+            \int_0^\infty x^3 e^{-\alpha x^2} dx &=& \frac{1}{2\alpha^2}, \\
+            \langle v \rangle &=& 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} \frac{1}{2\left(m/2k_B T\right)^2} \\
+            &=& 2\pi^{-1/2} \left(\frac{m}{2k_B T}\right)^{-1/2} \\
+            &=& \sqrt{\frac{8 k_B T}{\pi m}}.
+        \end{eqnarray*}
+
+        $$\fbox{$\langle v \rangle = \sqrt{\frac{8 k_B T}{\pi m}}$}$$
+ 
+		\item $\langle v^2 \rangle = \int_0^{\infty} v^2 f(v) dv$
+        \begin{eqnarray*}
+            \langle v^2 \rangle &=& \int_0^\infty v^2 f(v) dv \\
+            &=& \int_0^\infty 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} v^4 e^{-mv^2/2k_B T} dv \\
+            &=& 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} \int_0^\infty v^4 e^{-mv^2/2k_B T} dv \\
+        \end{eqnarray*}
+        Using the known Gaussian integral
+        \begin{eqnarray*}
+            \int_0^\infty x^4 e^{-\alpha x^2} dx &=& \frac{3}{8}\sqrt{\frac{\pi}{\alpha^5}} \\
+            \langle v^2 \rangle &=& 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} \cdot \frac{3}{8}\sqrt{\frac{\pi}{(m/2k_B T)^5}} \\
+            &=& \frac{3}{2} \left(\frac{m}{2k_B T}\right)^{3/2} \left(\frac{m}{2k_B T}\right)^{-5/2} \\
+            &=& \frac{3k_B T}{m}.
+        \end{eqnarray*}
+
+        $$\fbox{$\langle v^2 \rangle = \frac{3k_B T}{m}$}$$
+
+		\item $v_{rms} = \sqrt{\langle v^2 \rangle}$
+		\begin{eqnarray*}
+            v_{rms} &=& \sqrt{\langle v^2 \rangle} \\
+            &=& \sqrt{\frac{3k_B T}{m}}.
+        \end{eqnarray*}
+
+        $$\fbox{$v_{rms} = \sqrt{\frac{3k_B T}{m}}$}$$
+
+		\item $\langle E_{KE} \rangle$
+		\begin{eqnarray*}
+            \langle E_{KE} \rangle &=& \frac{1}{2} m \langle v^2 \rangle \\
+            &=& \frac{1}{2} m \frac{3k_B T}{m}\\
+            &=& \frac{3k_B T}{2}.
+        \end{eqnarray*}
+
+        $$\fbox{$\langle E_{KE} \rangle =\frac{3k_B T}{2}$}$$
+	\end{enumerate}
+
+	% 2.
+	\item Show that
+	$$\bar{E} = -\frac{1}{Z}\frac{\partial Z}{\partial \beta} = -\frac{\partial \ln Z}{\partial \beta}.$$
+
+	The partition function is defined as $Z = \sum_s e^{-\beta E_s}$ where $\beta = \frac{1}{k_BT}$.
+    \begin{eqnarray*}
+        \frac{\partial Z}{\partial \beta} &=& \sum_s -E_s e^{-\beta E_s} \\
+        \bar{E} &=& -\frac{1}{Z} \sum_s -E_s e^{-\beta E_s} \\
+        &=& \frac{\sum_s E_s e^{-\beta E_s}}{Z} \\
+        \\
+        -\frac{\partial \ln Z}{\partial \beta} &=& -\frac{1}{Z} \frac{\partial Z}{\partial \beta} \\
+        &=& \frac{\sum_s E_s e^{-\beta E_s}}{Z}.
+    \end{eqnarray*}
+    $$\fbox{$-\frac{1}{Z}\frac{\partial Z}{\partial \beta} = -\frac{\partial \ln Z}{\partial \beta}$}$$
+\end{enumerate}
+
+\end{document}
